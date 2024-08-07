@@ -1,0 +1,47 @@
+@import '../../../Common.module'
+
+
+.futureForecast
+  width: 100%
+  @extend .box
+  display: grid
+  grid-template-columns: 1fr 2fr 2fr
+  column-gap: 2rem
+  overflow-x: hidden
+
+  &__items
+    @extend .flexRow
+    justify-content: center
+    width: 100%
+    & > img
+      margin-right: 1rem
+
+  &__weather
+    @extend .flexColumn
+    align-items: center
+    margin-right: 2rem
+
+  &__params
+    @extend .flexColumn
+    height: 100%
+    justify-content: space-evenly
+
+  &__paramsItem
+    @extend .flexRow
+
+    & > img
+      margin-right: 1rem
+
+  &__item
+    margin-bottom: .5rem
+
+  &__text
+    @extend .itemText
+
+.forecastDay
+  &__params
+    display: grid
+    grid-template-columns: repeat(2, 1.5fr)
+    grid-template-rows: repeat(2, 1fr)
+    row-gap: 1rem
+    column-gap: 1.5rem

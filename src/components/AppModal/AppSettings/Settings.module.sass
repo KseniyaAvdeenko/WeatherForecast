@@ -1,0 +1,22 @@
+@import "../../../Common.module"
+.settings
+  &__container
+    padding: 2rem
+    border-radius: 20px
+    width: 33.6%
+    height: fit-content
+    box-shadow: 0 0 50px 10px rgba(241, 241, 241, 0.5)
+    background: #f1f1f1
+
+  &__items
+    background: white
+    border-radius: 2rem
+    padding: 2rem
+    color: #010925
+    @extend .flexRow
+    justify-content: space-between
+    margin-bottom: 3rem
+    position: relative
+
+    & > p
+      @extend .flexRow

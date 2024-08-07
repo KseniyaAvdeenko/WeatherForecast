@@ -1,0 +1,27 @@
+@import '../../../Common.module'
+
+.risesSets
+  @extend .box
+  flex-basis: 49%
+
+.risesSets__container
+  @extend .flexRow
+  justify-content: space-between
+
+.rises__items,
+.sets__items
+  display: grid
+  grid-template-rows: repeat(2, 1fr)
+  row-gap: 2rem
+
+.rises__item,
+.sets__item
+  @extend .flexRow
+  align-items: center
+
+  & > img
+    margin-right: 1rem
+
+.moonPhase
+  @extend .flexColumn
+  align-items: center

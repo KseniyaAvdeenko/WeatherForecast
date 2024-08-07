@@ -1,0 +1,14 @@
+@import '../../../Common.module'
+
+.weatherParams
+  @extend .box
+  flex-basis: 49%
+  display: grid
+  grid-template-columns: repeat(4, 2fr)
+  grid-template-rows: repeat(2, 1fr)
+  &__items
+    @extend .flexRow
+
+    & > img
+      margin-right: 1rem
+      transition: all .5s ease

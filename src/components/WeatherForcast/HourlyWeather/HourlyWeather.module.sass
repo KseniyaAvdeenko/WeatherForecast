@@ -1,0 +1,19 @@
+@import '../../../Common.module'
+
+.hourlyWeather
+  @extend .box
+  width: 100%
+  margin-bottom: 2rem
+  display: grid
+  grid-template-columns: repeat(13, 1fr)
+  overflow-x: auto
+  &__items
+    @extend .flexColumn
+    align-items: center
+    flex-basis: 20%
+
+  &__item
+    margin-bottom: .5rem
+
+  &__text
+    @extend .itemText

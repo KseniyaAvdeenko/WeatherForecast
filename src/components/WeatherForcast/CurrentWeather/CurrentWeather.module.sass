@@ -1,0 +1,31 @@
+@import '../../../Common.module'
+
+.currentWeather
+  width: 100%
+  height: 42vh
+  @extend .flexRow
+  justify-content: center
+  padding-bottom: 2.5rem
+
+  &__location
+    font-size: 1.4rem
+    @extend .flexRow
+    margin-bottom: .5rem
+
+  &__time
+    font-size: 3rem
+    margin-bottom: 1rem
+
+  &__temp
+    font-size: 10rem
+    margin-bottom: 1rem
+    font-weight: 800
+
+  &__text
+    text-align: center
+    margin-top: 1rem
+    font-size: 2rem
+
+.currentWeather__items
+  @extend .flexColumn
+  align-items: center
