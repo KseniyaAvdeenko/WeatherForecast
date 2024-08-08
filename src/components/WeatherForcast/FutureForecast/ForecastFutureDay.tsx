@@ -1,12 +1,13 @@
 import React from 'react';
 import {IForecastDay} from "../../../interface/IForecast";
 import weatherStyles from "./FutureForecast.module.sass";
-import {getTempFormat, TempFormat} from "../../../hooks/getTempFormat";
+import {getTempFormat} from "../../../hooks/getTempFormat";
 import MaxTemp from "../../../assets/maxTemp.svg";
 import MinTemp from "../../../assets/minTemp.svg";
 import UV from "../../../assets/UV.svg";
 import {getUvIndex} from "../../../hooks/getUvIndex";
 import Humidity from "../../../assets/humidity.svg";
+import {TempFormat} from "../../../interface/IFormats";
 
 interface ForecastFutureDayProps {
     tempFormat: TempFormat;

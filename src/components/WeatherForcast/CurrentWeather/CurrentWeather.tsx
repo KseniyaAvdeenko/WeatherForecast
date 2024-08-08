@@ -2,8 +2,9 @@ import React, {FC} from 'react';
 import weatherStyles from './CurrentWeather.module.sass'
 import {ICurrent, ILocation} from "../../../interface/IForecast";
 import {getIcon} from "../../../hooks/getIcon";
-import {getTempFormat, TempFormat} from "../../../hooks/getTempFormat";
+import {getTempFormat} from "../../../hooks/getTempFormat";
 import {Icon} from "@iconify-icon/react";
+import {TempFormat} from "../../../interface/IFormats";
 
 interface ICurrentWeatherProps {
     currentWeather: ICurrent | undefined;

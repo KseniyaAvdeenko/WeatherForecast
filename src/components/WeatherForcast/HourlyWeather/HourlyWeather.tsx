@@ -2,8 +2,9 @@ import React from 'react';
 import weatherStyles from './HourlyWeather.module.sass'
 import {IForecastDay, IHour} from "../../../interface/IForecast";
 import {getIcon} from "../../../hooks/getIcon";
-import {getTempFormat, TempFormat} from "../../../hooks/getTempFormat";
+import {getTempFormat} from "../../../hooks/getTempFormat";
 import {Icon} from "@iconify-icon/react";
+import {TempFormat} from "../../../interface/IFormats";
 
 interface IHourlyWeatherProps {
     isLoading: boolean

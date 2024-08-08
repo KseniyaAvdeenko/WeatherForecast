@@ -1,9 +1,8 @@
 import React, {FC} from 'react';
 import styles from './Settings.module.sass'
-import {TempFormat} from "../../../hooks/getTempFormat";
-import {DistanceFormat} from "../../../hooks/getDistanceFormat";
 import TemperatureUnits from "./TemperatureUnits";
 import DistanceUnits from "./DistanceUnits";
+import {DistanceFormat, TempFormat} from "../../../interface/IFormats";
 
 interface ISettingsProps {
     userLang: string;

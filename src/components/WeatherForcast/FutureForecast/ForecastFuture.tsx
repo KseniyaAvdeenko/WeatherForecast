@@ -2,9 +2,10 @@ import React from 'react';
 import weatherStyles from './FutureForecast.module.sass'
 import {IForecastDay} from "../../../interface/IForecast";
 import {getIcon} from "../../../hooks/getIcon";
-import {getTempFormat, TempFormat} from "../../../hooks/getTempFormat";
+import {getTempFormat} from "../../../hooks/getTempFormat";
 import {Icon} from "@iconify-icon/react";
 import ForecastFutureDay from "./ForecastFutureDay";
+import {TempFormat} from "../../../interface/IFormats";
 
 
 interface IForecastFuture {
@@ -16,7 +17,7 @@ interface IForecastFuture {
 }
 
 const ForecastFuture: React.FC<IForecastFuture> = ({isLoading, forecastDay, tempFormat, currentDate, userLang}) => {
-    console.log(forecastDay?.forecastday)
+    //console.log(forecastDay?.forecastday)
     return (
         <div className={weatherStyles.futureForecast}>
             {isLoading && <Icon icon="svg-spinners:6-dots-rotate" width="20" height="20" style={{color: 'white'}}/>}

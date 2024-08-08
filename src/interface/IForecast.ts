@@ -32,6 +32,7 @@ export interface ICurrent {
     wind_degree: number;
     cloud: number;
     uv: number;
+    wind_mph: number;
     wind_kph: number;
     vis_km: number;
     vis_miles: number;

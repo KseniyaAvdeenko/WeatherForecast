@@ -1,20 +1,16 @@
 import React, {FC, useEffect, useState} from 'react';
 import appStyle from "./App.module.sass";
 import CurrentWeather from "../WeatherForcast/CurrentWeather/CurrentWeather";
-import CurrentWeatherParams from "../WeatherForcast/WeatherParams/CurrentWeatherParams";
-import RisesAndSets from "../WeatherForcast/RisesAndSets/RisesAndSets";
-import HourlyWeather from "../WeatherForcast/HourlyWeather/HourlyWeather";
-import ForecastFuture from "../WeatherForcast/FutureForecast/ForecastFuture";
 import {IIpData} from "../../interface/IIpData";
 import {weatherApi} from "../../store/queries/weatherApi";
-import {TempFormat} from "../../hooks/getTempFormat";
 import {BgColors, IAppBg, OvercastCodes} from "../../interface/IAppBg";
 import {Icon} from "@iconify-icon/react";
 import AppModal from "../AppModal/AppModal";
 import Dropdown from "../Dropdown/Dropdown";
 import DropdownItems from "../Dropdown/DropdownItems";
 import Settings from "../AppModal/AppSettings/Settings";
-import {DistanceFormat} from "../../hooks/getDistanceFormat";
+import {DistanceFormat, TempFormat} from "../../interface/IFormats";
+import MainItems from "./MainItems";
 
 
 interface IMainProps {
@@ -68,7 +64,7 @@ const Main: FC<IMainProps> = ({
         }
     }, [weather]);
 
-    console.log(isSettingModalActive, 'isLoading', isLoading, 'isFetching', isFetching, 'isUninitialized', isUninitialized)
+    console.log('isLoading', isLoading, 'isFetching', isFetching, 'isUninitialized', isUninitialized)
 
     return (
         <main className={appStyle.main} style={appBg}>
@@ -94,19 +90,7 @@ const Main: FC<IMainProps> = ({
             />
             <CurrentWeather isLoading={isLoading} tempFormat={tempFormat} currentWeather={weather?.current}
                             location={weather?.location}/>
-            <div className={appStyle.main__items}>
-                <div className={appStyle.weather__params}>
-                    <CurrentWeatherParams userLang={userLang} isLoading={isLoading} tempFormat={tempFormat}
-                                          currentWeather={weather?.current}/>
-                    <RisesAndSets isLoading={isLoading} localTime={weather?.current.last_updated}
-                                  forecastday={weather?.forecast}/>
-                </div>
-                <HourlyWeather isLoading={isLoading} tempFormat={tempFormat} localTime={weather?.current.last_updated}
-                               forecastDay={weather?.forecast} lastUpdated={weather?.current.last_updated}/>
-                <ForecastFuture userLang={userLang} isLoading={isLoading}
-                                currentDate={weather?.current.last_updated.split(' ')[0]} tempFormat={tempFormat}
-                                forecastDay={weather?.forecast}/>
-            </div>
+            <MainItems isLoading={isLoading} userLang={userLang} distanceFormat={distanceFormat} tempFormat={tempFormat} weather={weather}/>
         </main>
     );
 };

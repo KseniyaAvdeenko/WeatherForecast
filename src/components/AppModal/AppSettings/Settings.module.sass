@@ -5,14 +5,15 @@
     border-radius: 20px
     width: 33.6%
     height: fit-content
-    box-shadow: 0 0 50px 10px rgba(241, 241, 241, 0.5)
-    background: #f1f1f1
+    box-shadow: 0 0 5rem 1rem rgba(241, 241, 241, 0.5)
+    background: $mainText
 
   &__items
     background: white
     border-radius: 2rem
     padding: 2rem
-    color: #010925
+    cursor: pointer
+    color: $nightBg
     @extend .flexRow
     justify-content: space-between
     margin-bottom: 3rem
@@ -20,3 +21,53 @@
 
     & > p
       @extend .flexRow
+
+.selectDistanceUnit,
+.selectTempUnit
+  display: none
+  width: 100%
+  position: absolute
+  bottom: -105%
+  background: $mainText
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2)
+  left: 0
+  z-index: 3
+  border-radius: 2rem
+  padding: 2rem
+  color: $nightBg
+  height: fit-content
+
+  &_active
+    display: flex !important
+    flex-direction: column
+
+  &__option
+    @extend .flexRow
+    justify-content: space-between
+    padding: .5rem 0
+
+    & > label
+      @extend .flexRow
+
+  //
+  //display: none
+  //width: 100%
+  //position: absolute
+  //bottom: -105%
+  //background: $mainText
+  //box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2)
+  //left: 0
+  //z-index: 3
+  //border-radius: 2rem
+  //padding: 2rem
+  //color: $nightBg
+  //height: fit-content
+  //&_active
+  //  display: flex !important
+  //  flex-direction: column
+  //&__option
+  //  @extend .flexRow
+  //  justify-content: space-between
+  //
+  //  & > label
+  //    @extend .flexRow

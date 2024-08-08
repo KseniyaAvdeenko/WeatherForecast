@@ -1,5 +1,5 @@
 import React from 'react';
-import {IIconProps} from "./IIconProps";
+import {IIconProps} from "../interface/IIconProps";
 
 const RainShowerMoon: React.FC<IIconProps> = ({width, height}) => {
     return (

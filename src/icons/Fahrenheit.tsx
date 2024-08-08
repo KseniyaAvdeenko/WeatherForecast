@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon} from "@iconify-icon/react";
-import {IIconProps} from "./IIconProps";
+import {IIconProps} from "../interface/IIconProps";
 
 const Fahrenheit: React.FC<IIconProps> = ({width, height}) => {
     return (

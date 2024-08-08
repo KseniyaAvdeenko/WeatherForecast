@@ -1,8 +1,9 @@
 import Celsius from "../icons/Celsius";
 import Fahrenheit from "../icons/Fahrenheit";
+import {TempFormat} from "../interface/IFormats";
 
 
-export type TempFormat = 'celsius' | 'fahrenheit'
+
 
 const spanStyle = {display: 'flex', alignItems:'center', height: 'fit-content', lineHeight:.8}
 
