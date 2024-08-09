@@ -14,11 +14,12 @@
     width: 100%
     @extend .flexColumn
 
-.weather__params
-  width: 100%
-  @extend .flexRow
-  justify-content: space-between
-  margin-bottom: 2rem
+.weather
+  &__params
+    width: 100%
+    @extend .flexRow
+    justify-content: space-between
+    margin-bottom: 2rem
 
 .settings
   &__icon
@@ -26,4 +27,17 @@
     top: 2.5rem
     right: 2.5rem
     cursor: pointer
+
+
+@media all and (max-device-width: 540px)
+  .weather
+    &__params
+      width: 100%
+      flex-direction: column
+
+
+@media all and (max-device-width: 430px)
+  .main
+    height: 100%
+
 

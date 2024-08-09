@@ -2,13 +2,47 @@
 
 .weatherParams
   @extend .box
+  width: 100%
   flex-basis: 49%
-  display: grid
-  grid-template-columns: repeat(4, 2fr)
-  grid-template-rows: repeat(2, 1fr)
+  height: fit-content
+
+  &__container
+    display: grid
+    grid-template-columns: repeat(4, 2fr)
+    grid-template-rows: repeat(2, 1fr)
+    row-gap: 1rem
+
+
   &__items
     @extend .flexRow
 
     & > img
       margin-right: 1rem
       transition: all .5s ease
+
+
+@media all and (max-device-width: 540px)
+  .weatherParams
+    flex-basis: auto
+    margin-bottom: 2rem
+    font-size: 1.4rem
+
+@media all and (max-device-width: 430px)
+  .weatherParams
+    flex-basis: auto
+    margin-bottom: 2rem
+
+    &__container
+      column-gap: 2rem
+      grid-template-rows: repeat(3, 1fr)
+      grid-template-columns: repeat(3, 1fr)
+
+@media all and (max-device-width: 320px)
+  .weatherParams
+    &__container
+      column-gap: 2rem
+      grid-template-rows: repeat(4, 1fr)
+      grid-template-columns: repeat(2, 1fr)
+
+
+

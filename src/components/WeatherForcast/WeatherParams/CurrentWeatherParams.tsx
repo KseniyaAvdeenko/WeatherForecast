@@ -35,7 +35,7 @@ const CurrentWeatherParams: FC<ICurrentWeatherParamsProps> = ({
         <div className={weatherStyles.weatherParams} style={{rowGap: currentWeather ? '2rem' : 0}}>
             {isLoading && <Icon icon="svg-spinners:6-dots-rotate" width="20" height="20" style={{color: 'white'}}/>}
             {currentWeather &&
-                <>
+                <div className={weatherStyles.weatherParams__container}>
                     <div className={weatherStyles.weatherParams__items}>
                         <img src={Humidity} alt="humidity"/>
                         <div>{currentWeather.humidity}%</div>
@@ -75,7 +75,7 @@ const CurrentWeatherParams: FC<ICurrentWeatherParamsProps> = ({
                         <img src={Pressure} alt="Pressure"/>
                         <div>{currentWeather.pressure_mb} {userLang === 'ru' ? 'гПа' : 'mb'}</div>
                     </div>
-                </>}
+                </div>}
         </div>
     );
 };

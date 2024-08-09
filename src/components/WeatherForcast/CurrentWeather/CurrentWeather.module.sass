@@ -29,3 +29,34 @@
 .currentWeather__items
   @extend .flexColumn
   align-items: center
+
+@media all and (max-device-width: 540px)
+  .currentWeather
+      &__temp
+        font-size: 8rem
+        & > div > svg
+          width: 5rem
+          margin-left: 1rem
+      &__time
+        font-size: 2.5rem
+      &__items
+        & > svg
+          height: 6rem
+
+@media all and (max-device-width: 430px)
+   .currentWeather
+      &__temp
+        font-size: 6.5rem
+        & > div > svg
+          width: 4.5rem
+          margin-left: 1rem
+      &__time
+        font-size: 2rem
+      &__items
+        & > svg
+          height: 6rem
+
+
+@media all and (max-device-width: 320px)
+  .currentWeather
+    height: 65vh

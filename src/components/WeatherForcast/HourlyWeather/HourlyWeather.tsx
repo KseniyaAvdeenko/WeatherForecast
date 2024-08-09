@@ -39,16 +39,19 @@ const HourlyWeather: React.FC<IHourlyWeatherProps> = ({
 
     return (
         <div className={weatherStyles.hourlyWeather}>
-            {isLoading && <Icon icon="svg-spinners:6-dots-rotate" width="20" height="20"  style={{color: 'white'}} />}
-            {lastUpdated && forecastDay && getContinuousHourlyWeather(forecastDay.forecastday, lastUpdated).map(hour => (
-                    <div className={weatherStyles.hourlyWeather__items} key={hour.time}>
-                        <div className={weatherStyles.hourlyWeather__item}>{hour.time.split(' ')[1]}</div>
-                        <div className={weatherStyles.hourlyWeather__item}>{getIcon(hour.condition.code, 30, 30, hour.is_day)}</div>
-                        <div
-                            className={weatherStyles.hourlyWeather__text}>{getTempFormat(tempFormat, hour.temp_c, hour.temp_f, 12, 12)}</div>
-                    </div>
-                )
-            )}
+            <div className={weatherStyles.hourlyWeather__container}>
+                {isLoading && <Icon icon="svg-spinners:6-dots-rotate" width="20" height="20" style={{color: 'white'}}/>}
+                {lastUpdated && forecastDay && getContinuousHourlyWeather(forecastDay.forecastday, lastUpdated).map(hour => (
+                        <div className={weatherStyles.hourlyWeather__items} key={hour.time}>
+                            <div className={weatherStyles.hourlyWeather__item}>{hour.time.split(' ')[1]}</div>
+                            <div
+                                className={weatherStyles.hourlyWeather__item}>{getIcon(hour.condition.code, 30, 30, hour.is_day)}</div>
+                            <div
+                                className={weatherStyles.hourlyWeather__text}>{getTempFormat(tempFormat, hour.temp_c, hour.temp_f, 12, 12)}</div>
+                        </div>
+                    )
+                )}
+            </div>
         </div>
     );
 };

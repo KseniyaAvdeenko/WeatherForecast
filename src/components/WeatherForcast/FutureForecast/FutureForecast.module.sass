@@ -4,15 +4,17 @@
 .futureForecast
   width: 100%
   @extend .box
-  display: grid
-  grid-template-columns: 1fr 2fr 2fr
-  column-gap: 2rem
-  overflow-x: hidden
+
+  &__container
+    display: grid
+    grid-template-columns: 1fr 2fr 2fr
+    column-gap: 2rem
 
   &__items
     @extend .flexRow
     justify-content: center
     width: 100%
+
     & > img
       margin-right: 1rem
 
@@ -45,3 +47,30 @@
     grid-template-rows: repeat(2, 1fr)
     row-gap: 1rem
     column-gap: 1.5rem
+
+@media all and (max-device-width: 744px)
+  .futureForecast
+    &__container
+      overflow-y: auto
+      height: 9.5rem
+
+@media all and (max-device-width: 540px)
+  .futureForecast
+    &__container
+      justify-items: left
+      grid-template-rows: auto auto
+      grid-template-columns: auto auto
+      column-gap: 1rem
+      row-gap: 2rem
+
+    &__items
+      justify-content: left
+
+@media all and (max-device-width: 430px)
+  .futureForecast
+    &__container
+      grid-template-columns: repeat(3, 2fr)
+      column-gap: 2rem
+      row-gap: .5rem
+      height: fit-content
+

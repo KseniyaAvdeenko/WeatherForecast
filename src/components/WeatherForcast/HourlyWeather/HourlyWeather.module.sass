@@ -4,9 +4,14 @@
   @extend .box
   width: 100%
   margin-bottom: 2rem
-  display: grid
-  grid-template-columns: repeat(13, 1fr)
-  overflow-x: auto
+  height: fit-content
+
+  &__container
+    display: grid
+    grid-template-columns: repeat(13, 1fr)
+    padding-bottom: 1rem
+    overflow-x: auto
+    height: fit-content
   &__items
     @extend .flexColumn
     align-items: center
@@ -17,3 +22,17 @@
 
   &__text
     @extend .itemText
+
+@media all and (max-device-width: 540px)
+  .hourlyWeather
+     &__container
+        column-gap: 2rem
+
+
+@media all and (max-device-width: 430px)
+  .hourlyWeather
+    &__container
+      height: 9rem
+    &__item
+      &>svg
+        height: 2.5rem
