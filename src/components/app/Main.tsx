@@ -64,7 +64,6 @@ const Main: FC<IMainProps> = ({
         }
     }, [weather]);
 
-    console.log('isLoading', isLoading, 'isFetching', isFetching, 'isUninitialized', isUninitialized)
 
     return (
         <main className={appStyle.main} style={appBg}>
